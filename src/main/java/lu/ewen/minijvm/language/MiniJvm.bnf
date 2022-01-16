@@ -16,7 +16,3 @@ miniJvmFile ::= item_*
 private item_ ::= (COMMENT|LABEL|ins|CRLF)
 
 ins ::= (INSTRUCTION PARAM_DECIMAL) | (INSTRUCTION PARAM_LABEL) | INSTRUCTION
-
-/*private item_ ::= (property|COMMENT|LABEL|CRLF)
-
-property ::= (KEY? SEPARATOR VALUE?) | KEY*/
