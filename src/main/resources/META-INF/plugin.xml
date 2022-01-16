@@ -1,0 +1,31 @@
+<idea-plugin>
+  <id>lu.ewen.minijvm.language</id>
+  <name>MiniJVM Syntax Highlighter</name>
+
+  <!-- Product and plugin compatibility requirements -->
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.java</depends>
+
+  <!-- Text to display as description on Preferences/Settings | Plugin page -->
+  <description>
+    <![CDATA[
+      Adds Syntax Highlighting for the MiniJVM Language
+    ]]>
+  </description>
+  <change-notes>
+    <![CDATA[
+      <ul>
+        <li><b>1.0.0</b>First Release</li>
+      </ul>
+    ]]>
+  </change-notes>
+
+  <vendor url="https://github.com/EweLoHD">Louis Ewen</vendor>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <fileType name="MiniJVM File" implementationClass="lu.ewen.minijvm.language.MiniJvmFileType" fieldName="INSTANCE" language="MiniJVM" extensions="jvm"/>
+    <lang.parserDefinition language="MiniJVM" implementationClass="lu.ewen.minijvm.language.MiniJvmParserDefinition"/>
+    <lang.syntaxHighlighterFactory language="MiniJVM" implementationClass="lu.ewen.minijvm.language.MiniJvmSyntaxHighlighterFactory"/>
+  </extensions>
+
+</idea-plugin>

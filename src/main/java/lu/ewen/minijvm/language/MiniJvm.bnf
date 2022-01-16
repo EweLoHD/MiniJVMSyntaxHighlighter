@@ -1,0 +1,22 @@
+{
+    parserClass="lu.ewen.minijvm.language.parser.MiniJvmParser"
+
+    psiClassPrefix="MiniJvm"
+    psiImplClassSuffix="Impl"
+    psiPackage="lu.ewen.minijvm.language.psi"
+    psiImplPackage="lu.ewen.minijvm.language.psi.impl"
+
+    elementTypeHolderClass="lu.ewen.minijvm.language.psi.MiniJvmTypes"
+    elementTypeClass="lu.ewen.minijvm.language.psi.MiniJvmElementType"
+    tokenTypeClass="lu.ewen.minijvm.language.psi.MiniJvmTokenType"
+}
+
+miniJvmFile ::= item_*
+
+private item_ ::= (COMMENT|LABEL|ins|CRLF)
+
+ins ::= (INSTRUCTION PARAM_DECIMAL) | (INSTRUCTION PARAM_LABEL) | INSTRUCTION
+
+/*private item_ ::= (property|COMMENT|LABEL|CRLF)
+
+property ::= (KEY? SEPARATOR VALUE?) | KEY*/
