@@ -7,7 +7,7 @@ import com.intellij.psi.PsiElement;
 
 public class MiniJvmVisitor extends PsiElementVisitor {
 
-  public void visitIns(@NotNull MiniJvmIns o) {
+  public void visitAlso(@NotNull MiniJvmAlso o) {
     visitPsiElement(o);
   }
 

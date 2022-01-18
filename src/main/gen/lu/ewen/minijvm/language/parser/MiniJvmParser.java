@@ -36,48 +36,27 @@ public class MiniJvmParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // (INSTRUCTION PARAM_DECIMAL) | (INSTRUCTION PARAM_LABEL) | INSTRUCTION
-  public static boolean ins(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "ins")) return false;
-    if (!nextTokenIs(b, INSTRUCTION)) return false;
+  // LINE_WS|EOL_WS
+  public static boolean also(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "also")) return false;
+    if (!nextTokenIs(b, "<also>", EOL_WS, LINE_WS)) return false;
     boolean r;
-    Marker m = enter_section_(b);
-    r = ins_0(b, l + 1);
-    if (!r) r = ins_1(b, l + 1);
-    if (!r) r = consumeToken(b, INSTRUCTION);
-    exit_section_(b, m, INS, r);
-    return r;
-  }
-
-  // INSTRUCTION PARAM_DECIMAL
-  private static boolean ins_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "ins_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, INSTRUCTION, PARAM_DECIMAL);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // INSTRUCTION PARAM_LABEL
-  private static boolean ins_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "ins_1")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, INSTRUCTION, PARAM_LABEL);
-    exit_section_(b, m, null, r);
+    Marker m = enter_section_(b, l, _NONE_, ALSO, "<also>");
+    r = consumeToken(b, LINE_WS);
+    if (!r) r = consumeToken(b, EOL_WS);
+    exit_section_(b, l, m, r, false, null);
     return r;
   }
 
   /* ********************************************************** */
-  // COMMENT|LABEL|ins|CRLF
+  // LABEL|EXPRESSION|COMMENT|EOL_WS
   static boolean item_(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "item_")) return false;
     boolean r;
-    r = consumeToken(b, COMMENT);
-    if (!r) r = consumeToken(b, LABEL);
-    if (!r) r = ins(b, l + 1);
-    if (!r) r = consumeToken(b, CRLF);
+    r = consumeToken(b, LABEL);
+    if (!r) r = consumeToken(b, EXPRESSION);
+    if (!r) r = consumeToken(b, COMMENT);
+    if (!r) r = consumeToken(b, EOL_WS);
     return r;
   }
 

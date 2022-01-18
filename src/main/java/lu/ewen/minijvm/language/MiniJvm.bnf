@@ -13,6 +13,7 @@
 
 miniJvmFile ::= item_*
 
-private item_ ::= (COMMENT|LABEL|ins|CRLF)
+private item_ ::= (LABEL|EXPRESSION|COMMENT|EOL_WS)
 
-ins ::= (INSTRUCTION PARAM_DECIMAL) | (INSTRUCTION PARAM_LABEL) | INSTRUCTION
+// Just to define the symbols
+also ::= (LINE_WS|EOL_WS)

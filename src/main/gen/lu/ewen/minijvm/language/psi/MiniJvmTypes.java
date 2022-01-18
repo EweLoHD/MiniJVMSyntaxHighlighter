@@ -8,20 +8,19 @@ import lu.ewen.minijvm.language.psi.impl.*;
 
 public interface MiniJvmTypes {
 
-  IElementType INS = new MiniJvmElementType("INS");
+  IElementType ALSO = new MiniJvmElementType("ALSO");
 
   IElementType COMMENT = new MiniJvmTokenType("COMMENT");
-  IElementType CRLF = new MiniJvmTokenType("CRLF");
-  IElementType INSTRUCTION = new MiniJvmTokenType("INSTRUCTION");
+  IElementType EOL_WS = new MiniJvmTokenType("EOL_WS");
+  IElementType EXPRESSION = new MiniJvmTokenType("EXPRESSION");
   IElementType LABEL = new MiniJvmTokenType("LABEL");
-  IElementType PARAM_DECIMAL = new MiniJvmTokenType("PARAM_DECIMAL");
-  IElementType PARAM_LABEL = new MiniJvmTokenType("PARAM_LABEL");
+  IElementType LINE_WS = new MiniJvmTokenType("LINE_WS");
 
   class Factory {
     public static PsiElement createElement(ASTNode node) {
       IElementType type = node.getElementType();
-      if (type == INS) {
-        return new MiniJvmInsImpl(node);
+      if (type == ALSO) {
+        return new MiniJvmAlsoImpl(node);
       }
       throw new AssertionError("Unknown element type: " + type);
     }
