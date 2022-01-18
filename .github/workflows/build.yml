@@ -51,5 +51,5 @@ jobs:
         uses: actions/upload-artifact@v2.3.1
         with:
           name: ${{ steps.properties.outputs.artifact }}
-          path: ./build/libs/${{ steps.properties.outputs.artifact }}.jar
+          path: ./build/libs/${{ steps.properties.outputs.artifact }}
 
