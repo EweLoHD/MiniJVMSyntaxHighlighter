@@ -39,6 +39,17 @@ jobs:
           CHANGELOG="${CHANGELOG//$'\n'/'%0A'}"
           CHANGELOG="${CHANGELOG//$'\r'/'%0D'}"
           echo "::set-output name=changelog::$CHANGELOG"
+          
+      - name: Build Plugin
+        run: ./gradlew build
+
+      # Store already-built plugin as an artifact for downloading
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2.3.1
+        with:
+          name: ${{ steps.properties.outputs.artifact }}
+          path: ./build/libs/${{ steps.properties.outputs.artifact }}    
+          
       # Update Unreleased section with the current release note
       - name: Patch Changelog
         if: ${{ steps.properties.outputs.changelog != '' }}
