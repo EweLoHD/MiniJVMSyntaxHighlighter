@@ -16,6 +16,10 @@ public class MiniJvmSyntaxHighlighter extends SyntaxHighlighterBase {
 
   public static final TextAttributesKey EXPRESSION =
           createTextAttributesKey("MINIJVM_EXPRESSION", DefaultLanguageHighlighterColors.KEYWORD);
+  public static final TextAttributesKey PARAM_DECIMAL =
+          createTextAttributesKey("MINIJVM_PARAM_DECIMAL", DefaultLanguageHighlighterColors.NUMBER);
+  public static final TextAttributesKey PARAM_LABEL =
+          createTextAttributesKey("MINIJVM_PARAM_LABEL", DefaultLanguageHighlighterColors.INSTANCE_FIELD);
   public static final TextAttributesKey LABEL =
           createTextAttributesKey("MINIJVM_LABEL", DefaultLanguageHighlighterColors.FUNCTION_DECLARATION);
   public static final TextAttributesKey COMMENT =
@@ -25,6 +29,8 @@ public class MiniJvmSyntaxHighlighter extends SyntaxHighlighterBase {
 
   
   private static final TextAttributesKey[] EXPRESSION_KEYS = new TextAttributesKey[]{EXPRESSION};
+  private static final TextAttributesKey[] PARAM_DECIMAL_KEYS = new TextAttributesKey[]{PARAM_DECIMAL};
+  private static final TextAttributesKey[] PARAM_LABEL_KEYS = new TextAttributesKey[]{PARAM_LABEL};
   private static final TextAttributesKey[] LABEL_KEYS = new TextAttributesKey[]{LABEL};
   private static final TextAttributesKey[] COMMENT_KEYS = new TextAttributesKey[]{COMMENT};
   private static final TextAttributesKey[] BAD_CHAR_KEYS = new TextAttributesKey[]{BAD_CHARACTER};
@@ -40,6 +46,12 @@ public class MiniJvmSyntaxHighlighter extends SyntaxHighlighterBase {
   public TextAttributesKey @NotNull [] getTokenHighlights(IElementType tokenType) {
     if (tokenType.equals(MiniJvmTypes.EXPRESSION)) {
       return EXPRESSION_KEYS;
+    }
+    if (tokenType.equals(MiniJvmTypes.PARAM_DECIMAL)) {
+      return PARAM_DECIMAL_KEYS;
+    }
+    if (tokenType.equals(MiniJvmTypes.PARAM_LABEL)) {
+      return PARAM_LABEL_KEYS;
     }
     if (tokenType.equals(MiniJvmTypes.LABEL)) {
       return LABEL_KEYS;

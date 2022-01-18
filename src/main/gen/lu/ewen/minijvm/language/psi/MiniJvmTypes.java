@@ -15,6 +15,8 @@ public interface MiniJvmTypes {
   IElementType EXPRESSION = new MiniJvmTokenType("EXPRESSION");
   IElementType LABEL = new MiniJvmTokenType("LABEL");
   IElementType LINE_WS = new MiniJvmTokenType("LINE_WS");
+  IElementType PARAM_DECIMAL = new MiniJvmTokenType("PARAM_DECIMAL");
+  IElementType PARAM_LABEL = new MiniJvmTokenType("PARAM_LABEL");
 
   class Factory {
     public static PsiElement createElement(ASTNode node) {
