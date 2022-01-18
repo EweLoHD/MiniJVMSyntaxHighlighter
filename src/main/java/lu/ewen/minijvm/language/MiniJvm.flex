@@ -22,7 +22,7 @@ import static lu.ewen.minijvm.language.psi.MiniJvmTypes.*;
 EOL_WS = \n | \r | \r\n
 LINE_WS = [\ \t]
 
-COMMENT = "//"[^\r\n]*
+COMMENT = {LINE_WS}*("//")[^\r\n]*
 LABEL = ([a-zA-Z0-9$._~?#@]+):
 
 EXPRESSION = (ADD|ALLOC|AND|CONST|DIV|EQ|FALSE|FJUMP|HALT|JUMP|JUMPF|LE|LEQ|LESS|LOAD|MOD|MUL|NEG|NEQ|NOT|OR|READ|STORE|SUB|TRUE|WRITE)

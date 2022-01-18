@@ -13,7 +13,8 @@
 
 miniJvmFile ::= item_*
 
-private item_ ::= (LABEL|(EXPRESSION (LINE_WS (PARAM_DECIMAL|PARAM_LABEL))?)|COMMENT|EOL_WS)
+private item_ ::= ( LINE_WS | LABEL | (EXPRESSION (LINE_WS (PARAM_DECIMAL | PARAM_LABEL))?) | COMMENT | EOL_WS )
+//private item_ ::= ((LABEL|EXPRESSION (LINE_WS (PARAM_DECIMAL | PARAM_LABEL))?)? COMMENT? EOL_WS)
 
 // Just to define the symbols
 also ::= (LINE_WS|EOL_WS)

@@ -49,51 +49,52 @@ public class MiniJvmParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // LABEL|(EXPRESSION (LINE_WS (PARAM_DECIMAL|PARAM_LABEL))?)|COMMENT|EOL_WS
+  // LINE_WS | LABEL | (EXPRESSION (LINE_WS (PARAM_DECIMAL | PARAM_LABEL))?) | COMMENT | EOL_WS
   static boolean item_(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "item_")) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeToken(b, LABEL);
-    if (!r) r = item__1(b, l + 1);
+    r = consumeToken(b, LINE_WS);
+    if (!r) r = consumeToken(b, LABEL);
+    if (!r) r = item__2(b, l + 1);
     if (!r) r = consumeToken(b, COMMENT);
     if (!r) r = consumeToken(b, EOL_WS);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // EXPRESSION (LINE_WS (PARAM_DECIMAL|PARAM_LABEL))?
-  private static boolean item__1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "item__1")) return false;
+  // EXPRESSION (LINE_WS (PARAM_DECIMAL | PARAM_LABEL))?
+  private static boolean item__2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "item__2")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeToken(b, EXPRESSION);
-    r = r && item__1_1(b, l + 1);
+    r = r && item__2_1(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // (LINE_WS (PARAM_DECIMAL|PARAM_LABEL))?
-  private static boolean item__1_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "item__1_1")) return false;
-    item__1_1_0(b, l + 1);
+  // (LINE_WS (PARAM_DECIMAL | PARAM_LABEL))?
+  private static boolean item__2_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "item__2_1")) return false;
+    item__2_1_0(b, l + 1);
     return true;
   }
 
-  // LINE_WS (PARAM_DECIMAL|PARAM_LABEL)
-  private static boolean item__1_1_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "item__1_1_0")) return false;
+  // LINE_WS (PARAM_DECIMAL | PARAM_LABEL)
+  private static boolean item__2_1_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "item__2_1_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeToken(b, LINE_WS);
-    r = r && item__1_1_0_1(b, l + 1);
+    r = r && item__2_1_0_1(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // PARAM_DECIMAL|PARAM_LABEL
-  private static boolean item__1_1_0_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "item__1_1_0_1")) return false;
+  // PARAM_DECIMAL | PARAM_LABEL
+  private static boolean item__2_1_0_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "item__2_1_0_1")) return false;
     boolean r;
     r = consumeToken(b, PARAM_DECIMAL);
     if (!r) r = consumeToken(b, PARAM_LABEL);
