@@ -6,6 +6,6 @@ import javax.swing.*;
 
 public class MiniJvmIcons {
 
-  public static final Icon FILE = IconLoader.getIcon("/icons/jar-gray.png", MiniJvmIcons.class);
+  public static final Icon FILE = IconLoader.getIcon("/icons/jvm.svg", MiniJvmIcons.class);
 
 }
