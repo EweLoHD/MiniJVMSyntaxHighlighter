@@ -4,8 +4,10 @@ import org.jetbrains.changelog.*
 plugins {
   id 'java'
   id 'org.jetbrains.intellij' version '1.3.0'
-  id 'org.jetbrains.changelog' version "1.3.1"
+  id 'org.jetbrains.changelog' version '1.3.1'
 }
+
+apply plugin: 'org.jetbrains.changelog'
 
 group 'lu.ewen.minijvm'
 version = findProperty("pluginVersion")
@@ -50,4 +52,5 @@ patchPluginXml {
   version = project.version
   sinceBuild = '211'
   untilBuild = '213.*'
+  changeNotes = { changelog.getLatest().toHTML() }
 }
