@@ -1,5 +1,6 @@
 # 🐧 MiniJVM IntelliJ IDEA Plugin
 [![Build](https://github.com/EweLoHD/MiniJVMSyntaxHighlighter/actions/workflows/build.yml/badge.svg)](https://github.com/EweLoHD/MiniJVMSyntaxHighlighter/actions/workflows/build.yml)
+[![CodeQL](https://github.com/EweLoHD/MiniJVMSyntaxHighlighter/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/EweLoHD/MiniJVMSyntaxHighlighter/actions/workflows/codeql-analysis.yml)
 
 ![idea64_YXHmKCAjDy](https://user-images.githubusercontent.com/22636066/149988081-dc18664f-31cb-4694-bfcf-b78d0226850b.png)
 
