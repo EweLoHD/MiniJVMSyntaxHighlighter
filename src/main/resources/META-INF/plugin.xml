@@ -24,6 +24,7 @@
     <fileType name="MiniJVM File" implementationClass="lu.ewen.minijvm.language.MiniJvmFileType" fieldName="INSTANCE" language="MiniJVM" extensions="jvm"/>
     <lang.parserDefinition language="MiniJVM" implementationClass="lu.ewen.minijvm.language.MiniJvmParserDefinition"/>
     <lang.syntaxHighlighterFactory language="MiniJVM" implementationClass="lu.ewen.minijvm.language.MiniJvmSyntaxHighlighterFactory"/>
+    <colorSettingsPage implementation="lu.ewen.minijvm.language.MiniJvmColorSettingsPage"/>
   </extensions>
 
 </idea-plugin>
