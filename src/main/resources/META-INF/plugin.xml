@@ -25,6 +25,7 @@
     <lang.parserDefinition language="MiniJVM" implementationClass="lu.ewen.minijvm.language.MiniJvmParserDefinition"/>
     <lang.syntaxHighlighterFactory language="MiniJVM" implementationClass="lu.ewen.minijvm.language.MiniJvmSyntaxHighlighterFactory"/>
     <colorSettingsPage implementation="lu.ewen.minijvm.language.MiniJvmColorSettingsPage"/>
+    <completion.contributor language="MiniJVM" implementationClass="lu.ewen.minijvm.language.MiniJvmCompletionContributor"/>
   </extensions>
 
 </idea-plugin>
