@@ -7,6 +7,15 @@
 Plugin for IntelliJ IDEA that adds Syntax Hightlighting for MiniJVM Files
 
 ## Download & Installing
+### Install from Jetbrains Marketplace
+- You can download and install the Plugin from the Jetbrains Marketplace here: https://plugins.jetbrains.com/plugin/18433-minijvm-syntax-highlighter
+
+or
+
+- IntelliJ IDEA open the IDE `Settings` and select `Plugins`
+- Select `Marketplace` and search for "MiniJVM Syntax Highlighter"
+
+### Install manually
 - Download the latest Release in the [Releases Tab](https://github.com/EweLoHD/MiniJVMSyntaxHighlighter/releases). 
 - In IntelliJ IDEA open the IDE `Settings` and select `Plugins`
 - Click on the ⚙ Gear Icon and select `Install Plugin from Disk...`

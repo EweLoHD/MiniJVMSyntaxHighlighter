@@ -32,3 +32,7 @@
 
 ### Changed
 - Changed the `.jvm` File Icon
+
+## 1.0.4
+### Fixed
+- Added support for negative numbers
