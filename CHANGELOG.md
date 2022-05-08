@@ -36,3 +36,7 @@
 ## 1.0.4
 ### Fixed
 - Added support for negative numbers
+
+## 1.0.5
+### Changed
+- Added support for the latest version of IntelliJ
