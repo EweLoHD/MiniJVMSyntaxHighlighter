@@ -5,6 +5,7 @@
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.platform</depends>
   <depends>com.intellij.java</depends>
+  <idea-version since-build="211" until-build="223.*"/>
 
   <!-- Text to display as description on Preferences/Settings | Plugin page -->
   <description>
